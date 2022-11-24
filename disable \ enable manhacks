@@ -1,0 +1,9 @@
+-- garrys mod remove manhack script by @physsphyss
+-- to use paste the command into the console
+
+lua_run timer.Create("bees", 0.5, 0, function() for k,v in pairs(ents.GetAll()) do if v:GetClass() == "npc_manhack" then v:Remove() end end end)
+
+-- to remove this script:
+
+lua_run timer.Remove("bees")
+
