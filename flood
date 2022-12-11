@@ -1,0 +1,25 @@
+-- flood maybe???
+
+-- notes: 
+make sure you're running this inside of the console. this was made for sandbox and garrys mod. this script might not work for all maps, as i only tested it
+on a few maps, sorry!
+
+-- STARTUP:
+
+lua_run P=pairs f=ents.FindByName c=concommand.Add c('fstart',function(p)if!p:IsAdmin()then
+return end for _,e in P(f'water')do e:Fire'open'end end)c('fend',function(p)if!p:IsAdmin()then
+return end for _,e in P(f'water')do e:Fire'close'end end)
+
+-- STARTING
+
+"`fstart" 
+
+will start the flooding and drowning scripts needed.
+
+"`fend" will drain the map and remove the drowning.
+
+-- OTHERS
+
+lua_run for _,e in pairs(ents.FindByName'water_hurt')do e:Remove()end
+
+-- the above script removes the drowning function, even if the map is flooding. do note that you have to restart the map if you run this script into the console.
